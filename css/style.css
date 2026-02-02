@@ -81,6 +81,11 @@ h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
 .hero-title {
     line-height: 0.9;
     margin-bottom: 24px;
+    color: var(--color-white);
+}
+
+.hero-title .highlight {
+    color: var(--color-dark);
 }
 h2 { font-size: clamp(2rem, 4vw, 3rem); }
 h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
@@ -226,7 +231,7 @@ h4 { font-size: 1.125rem; }
 .hero {
     position: relative;
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--color-pink-light) 0%, var(--color-cream) 100%);
+    background: #efb6bc;
     padding-top: 80px;
     overflow: hidden;
 }
@@ -237,7 +242,7 @@ h4 { font-size: 1.125rem; }
     gap: 60px;
     align-items: center;
     min-height: calc(100vh - 80px);
-    padding: 40px 0 120px;
+    padding: 40px 0 60px;
 }
 
 .hero-subtitle {
@@ -251,7 +256,7 @@ h4 { font-size: 1.125rem; }
 
 .hero-description {
     font-size: 1.125rem;
-    color: var(--color-text-light);
+    color: var(--color-white);
     margin-bottom: 32px;
     max-width: 500px;
 }
@@ -271,12 +276,12 @@ h4 { font-size: 1.125rem; }
     font-family: var(--font-display);
     font-size: 1.75rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-white);
 }
 
 .stat-label {
     font-size: 0.875rem;
-    color: var(--color-text-light);
+    color: var(--color-white);
 }
 
 /* Hero Mascot */
@@ -350,7 +355,7 @@ h4 { font-size: 1.125rem; }
 }
 
 .wave-divider.wave-top.cream {
-    color: var(--color-cream);
+    color: #efb6bc;
 }
 
 .wave-divider.wave-bottom.cream {
@@ -376,7 +381,7 @@ h4 { font-size: 1.125rem; }
 /* ===== Menu Section ===== */
 .menu {
     position: relative;
-    padding: 140px 0 120px;
+    padding: 100px 0 120px;
     background: var(--color-white);
 }
 
