@@ -51,46 +51,95 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Intersection Observer for scroll animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+// Scroll Animation Observer
+const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
+            // Add delay for stagger effect
+            const delay = entry.target.dataset.delay || 0;
+            setTimeout(() => {
+                entry.target.classList.add('visible');
+            }, delay);
         }
     });
-}, observerOptions);
-
-// Observe elements for animation
-document.querySelectorAll('.menu-card, .feature-card, .contact-item, .about-stat').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
 });
 
-// Add animation class styles
-const style = document.createElement('style');
-style.textContent = `
-    .animate-in {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-    }
-`;
-document.head.appendChild(style);
+// Apply animations to section headers
+document.querySelectorAll('.section-header').forEach(el => {
+    el.classList.add('fade-in-up');
+    scrollObserver.observe(el);
+});
+
+// Apply animations to menu cards with stagger
+document.querySelectorAll('.menu-card').forEach((el, index) => {
+    el.classList.add('fade-in-up');
+    el.dataset.delay = index * 100;
+    scrollObserver.observe(el);
+});
+
+// Apply animations to feature cards
+document.querySelectorAll('.feature-card').forEach((el, index) => {
+    el.classList.add('scale-in');
+    el.dataset.delay = index * 150;
+    scrollObserver.observe(el);
+});
+
+// Apply animations to gallery items
+document.querySelectorAll('.gallery-item').forEach((el, index) => {
+    el.classList.add('scale-in');
+    el.dataset.delay = index * 80;
+    scrollObserver.observe(el);
+});
+
+// Apply animations to about section
+const aboutImage = document.querySelector('.about-image');
+if (aboutImage) {
+    aboutImage.classList.add('fade-in-left');
+    scrollObserver.observe(aboutImage);
+}
+
+const aboutText = document.querySelector('.about-text');
+if (aboutText) {
+    aboutText.classList.add('fade-in-right');
+    scrollObserver.observe(aboutText);
+}
+
+// Apply animations to contact items
+document.querySelectorAll('.contact-item').forEach((el, index) => {
+    el.classList.add('fade-in-left');
+    el.dataset.delay = index * 100;
+    scrollObserver.observe(el);
+});
+
+// Apply animation to contact form
+const contactFormEl = document.querySelector('.contact-form');
+if (contactFormEl) {
+    contactFormEl.classList.add('fade-in-right');
+    scrollObserver.observe(contactFormEl);
+}
+
+// Apply animations to stats
+document.querySelectorAll('.about-stat, .stat').forEach((el, index) => {
+    el.classList.add('scale-in');
+    el.dataset.delay = index * 100;
+    scrollObserver.observe(el);
+});
+
+// Gallery header animation
+const galleryHeader = document.querySelector('.gallery-header');
+if (galleryHeader) {
+    galleryHeader.classList.add('fade-in-up');
+    scrollObserver.observe(galleryHeader);
+}
 
 // Form submission handling
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
-        const formData = new FormData(contactForm);
-        const name = contactForm.querySelector('input[type="text"]').value;
         
         // Show success message
         const btn = contactForm.querySelector('.btn');
@@ -109,40 +158,76 @@ if (contactForm) {
     });
 }
 
-// Add stagger animation delay to menu cards
-document.querySelectorAll('.menu-card').forEach((card, index) => {
-    card.style.transitionDelay = `${index * 0.1}s`;
-});
-
-// Add stagger animation delay to feature cards
-document.querySelectorAll('.feature-card').forEach((card, index) => {
-    card.style.transitionDelay = `${index * 0.15}s`;
-});
-
-// Parallax effect for floating elements
+// Parallax effect for mascot
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
-    const floatItems = document.querySelectorAll('.float-item');
+    const mascot = document.querySelector('.mascot-image');
     
-    floatItems.forEach((item, index) => {
-        const speed = 0.1 + (index * 0.05);
-        item.style.transform = `translateY(${scrolled * speed}px)`;
-    });
+    if (mascot && scrolled < window.innerHeight) {
+        mascot.style.transform = `translateY(${scrolled * 0.1}px)`;
+    }
 });
 
-// Add hover sound effect simulation (visual feedback)
+// Counter animation for stats
+function animateCounter(el, target) {
+    let current = 0;
+    const increment = target / 50;
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        el.textContent = Math.floor(current) + (el.dataset.suffix || '');
+    }, 30);
+}
+
+// Observe stats for counter animation
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.animated) {
+            entry.target.dataset.animated = 'true';
+            const value = entry.target.dataset.value;
+            if (value) {
+                animateCounter(entry.target, parseInt(value));
+            }
+        }
+    });
+}, { threshold: 0.5 });
+
+// Add hover effects to cards
 document.querySelectorAll('.menu-card').forEach(card => {
     card.addEventListener('mouseenter', () => {
-        const emoji = card.querySelector('.menu-emoji');
-        if (emoji) {
-            emoji.style.transform = 'scale(1.2) rotate(10deg)';
-        }
+        card.style.transform = 'translateY(-10px) scale(1.02)';
     });
     
     card.addEventListener('mouseleave', () => {
-        const emoji = card.querySelector('.menu-emoji');
-        if (emoji) {
-            emoji.style.transform = '';
-        }
+        card.style.transform = '';
     });
+});
+
+// Smooth reveal for hero content
+window.addEventListener('load', () => {
+    const heroText = document.querySelector('.hero-text');
+    const heroImage = document.querySelector('.hero-image');
+    
+    if (heroText) {
+        heroText.style.opacity = '0';
+        heroText.style.transform = 'translateX(-30px)';
+        setTimeout(() => {
+            heroText.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            heroText.style.opacity = '1';
+            heroText.style.transform = 'translateX(0)';
+        }, 200);
+    }
+    
+    if (heroImage) {
+        heroImage.style.opacity = '0';
+        heroImage.style.transform = 'translateX(30px)';
+        setTimeout(() => {
+            heroImage.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            heroImage.style.opacity = '1';
+            heroImage.style.transform = 'translateX(0)';
+        }, 400);
+    }
 });
