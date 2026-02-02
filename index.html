@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milkbelly - A Casa do Milkshake</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">
+                <img src="logo-vaca.png" alt="Milkbelly" class="logo-icon-img">
+                <img src="logotipo.png" alt="Milkbelly" class="logo-text-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#cardapio">Cardápio</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <a href="#pedir" class="btn btn-primary">Pedir Agora</a>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">O MilkShake <span class="highlight">Muuuuuuito</span> mais gostoso</h1>
+                <p class="hero-description">Cremosidade de verdade, sabor que derrete na boca e aquele carinho especial em cada gole. Experimente e sinta a diferença.</p>
+                <a href="#cardapio" class="btn btn-primary btn-large">Ver Cardápio</a>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Sabores</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5k+</span>
+                        <span class="stat-label">Clientes Felizes</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">★ 4.9</span>
+                        <span class="stat-label">Avaliação</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="mascot-container">
+                    <img src="vaquinha-banner.png" alt="Milkbelly - Mascote vaquinha com milkshake" class="mascot-image">
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,64 C480,150 960,-20 1440,64 L1440,120 L0,120 Z" fill="#fff"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="cardapio" class="menu">
+        <div class="wave-divider wave-top cream">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,40 C360,100 720,0 1080,80 C1260,100 1380,60 1440,40 L1440,120 L0,120 Z" fill="currentColor"/>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle script">Nossos Sabores</p>
+                <h2 class="section-title">Cardápio Irresistível</h2>
+                <p class="section-description">Cada milkshake é uma experiência única, feito com ingredientes premium e muito carinho.</p>
+            </div>
+            
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="menu-card-image strawberry-shake"></div>
+                    <div class="menu-card-content">
+                        <h3>Morango Especial</h3>
+                        <p>Morangos frescos com sorvete cremoso e calda artesanal</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card">
+                    <div class="menu-card-image chocolate-shake"></div>
+                    <div class="menu-card-content">
+                        <h3>Chocolate Belga</h3>
+                        <p>Chocolate premium derretido com calda especial da casa</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card">
+                    <div class="menu-card-image vanilla-shake"></div>
+                    <div class="menu-card-content">
+                        <h3>Baunilha Clássico</h3>
+                        <p>Baunilha de Madagascar com chantilly e toque especial</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card">
+                    <div class="menu-card-image oreo-shake"></div>
+                    <div class="menu-card-content">
+                        <h3>Oreo Crocante</h3>
+                        <p>Biscoitos Oreo triturados com sorvete de creme belga</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card">
+                    <div class="menu-card-image caramel-shake"></div>
+                    <div class="menu-card-content">
+                        <h3>Caramelo Salgado</h3>
+                        <p>Caramelo artesanal com toque de flor de sal</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card">
+                    <div class="menu-card-image nutella-shake"></div>
+                    <div class="menu-card-content">
+                        <h3>Nutella Dreams</h3>
+                        <p>Creme de avelã importado com pedaços crocantes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wave-divider wave-bottom">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,80 C360,20 720,100 1080,40 C1260,20 1380,60 1440,80 L1440,0 L0,0 Z" fill="currentColor"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about">
+        <div class="wave-divider wave-top">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C180,100 360,20 540,60 C720,100 900,20 1080,60 C1260,100 1380,40 1440,60 L1440,120 L0,120 Z" fill="currentColor"/>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://viavaleshoppingcenter.com.br/wp-content/uploads/sites/4/2024/12/WhatsApp-Image-2024-11-01-at-16.26.09.jpeg" alt="Milkbelly - Milkshakes deliciosos" class="about-img">
+                </div>
+                
+                <div class="about-text">
+                    <p class="section-subtitle script">Nossa História</p>
+                    <h2 class="section-title">Feito com Amor, Servido com Alegria</h2>
+                    <p>O Milkbelly nasceu de uma paixão simples: criar os melhores milkshakes que você já provou. Desde 2018, estamos transformando ingredientes selecionados em momentos inesquecíveis de felicidade.</p>
+                    <p>Cada copo que servimos carrega nossa dedicação à qualidade e nosso compromisso com a satisfação de nossos clientes. Venha fazer parte da nossa família!</p>
+                    
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <span class="about-stat-number">6</span>
+                            <span class="about-stat-label">Anos de Amor</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="about-stat-number">50k+</span>
+                            <span class="about-stat-label">Milkshakes</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="about-stat-number">100%</span>
+                            <span class="about-stat-label">Natural</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🍓</div>
+                    <h3>Ingredientes Frescos</h3>
+                    <p>Utilizamos apenas frutas frescas e ingredientes naturais selecionados.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🍳</div>
+                    <h3>Receitas Artesanais</h3>
+                    <p>Cada receita é desenvolvida com técnicas tradicionais e muito carinho.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">❤️</div>
+                    <h3>Família Milkbelly</h3>
+                    <p>Uma equipe apaixonada por criar momentos deliciosos para você.</p>
+                </div>
+            </div>
+        </div>
+        <div class="wave-divider wave-bottom cream">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C180,20 360,100 540,60 C720,20 900,100 1080,60 C1260,20 1380,80 1440,60 L1440,0 L0,0 Z" fill="currentColor"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Instagram Gallery Section -->
+    <section id="galeria" class="gallery">
+        <div class="wave-divider wave-top">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" fill="currentColor"/>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle script">@milkbelly</p>
+                <h2 class="section-title">Nosso Feed</h2>
+                <p class="section-description">Acompanhe nossos momentos deliciosos no Instagram</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>Foto 1</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>Foto 2</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>Foto 3</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>Foto 4</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>Foto 5</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>Foto 6</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-cta">
+                <a href="https://instagram.com/milkbelly" target="_blank" class="btn btn-primary btn-large">Seguir no Instagram</a>
+            </div>
+        </div>
+        <div class="wave-divider wave-bottom">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C240,0 480,120 720,60 C960,0 1200,120 1440,60 L1440,0 L0,0 Z" fill="currentColor"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle script">Fale Conosco</p>
+                <h2 class="section-title">Entre em Contato</h2>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h4>Telefone</h4>
+                            <p>(11) 99999-9999</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Endereço</h4>
+                            <p>Rua dos Milkshakes, 123<br>São Paulo - SP</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div class="contact-details">
+                            <h4>Horário</h4>
+                            <p><strong>Segunda a Sexta:</strong> 10h às 22h<br>
+                            <strong>Sábado e Domingo:</strong> 11h às 23h</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Seu e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Sua mensagem" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <img src="logo-vaca.png" alt="Milkbelly" class="logo-icon-img">
+                        <img src="logotipo.png" alt="Milkbelly" class="logo-text-img">
+                    </a>
+                    <p>A Casa do Milkshake - Onde cada gole é uma experiência única de sabor e felicidade.</p>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p>📞 (11) 99999-9999</p>
+                    <p>📍 Rua dos Milkshakes, 123<br>São Paulo - SP</p>
+                </div>
+                
+                <div class="footer-hours">
+                    <h4>Horário</h4>
+                    <p><strong>Segunda a Sexta</strong><br>10h às 22h</p>
+                    <p><strong>Sábado e Domingo</strong><br>11h às 23h</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="#cardapio">Cardápio</a></li>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#">Franquias</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Milkbelly - A Casa do Milkshake. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
